@@ -38,6 +38,7 @@
             return ("Bad choice. Try again!")
         }
     };
-        //Rock Paper Scissors game. Gives results for each possible outcome and an error if user enters an improper response
+        /* Rock Paper Scissors game. Gives results for each possible outcome and
+        an error if user enters an improper response */
         let results = playRound(userSelection,computerSelection);
         console.log(results);
