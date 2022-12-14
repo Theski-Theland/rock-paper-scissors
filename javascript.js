@@ -15,8 +15,8 @@
     console.log(getComputerChoice());
     //function to generate a random choice between Rock Paper and Scissors
 
-    let playerSelection = capitalizeAnswer(answer);
-    console.log(playerSelection);
+    let userSelection = capitalizeAnswer(answer);
+    console.log(userSelection);
     
     let computerSelection = choice;
     console.log(computerSelection);
@@ -39,6 +39,5 @@
         }
     };
         //Rock Paper Scissors game. Gives results for each possible outcome and an error if user enters an improper response
-        let results = playRound();
-        playRound(playerSelection,computerSelection);
+        let results = playRound(userSelection,computerSelection);
         console.log(results);
