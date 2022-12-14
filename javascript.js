@@ -35,7 +35,8 @@
         } else if (x === y) {
             return ("It's a tie!");
         } else {
-            return ("Bad choice. Try again!")
+            alert("Bad choice! Refresh and try again!");
+
         }
     };
         /* Rock Paper Scissors game. Gives results for each possible outcome and
