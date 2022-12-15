@@ -26,11 +26,9 @@
             return ("It's a tie!");
         } else {
             alert("Bad choice! Refresh and try again!");
-
         }
     };
         /* Rock Paper Scissors game. Gives results for each possible outcome and
         an error if user enters an improper response */
         
-        let results = playRound(userSelection,computerSelection);
-        console.log(results);
+        console.log(playRound(userSelection,computerSelection));
