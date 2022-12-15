@@ -1,9 +1,8 @@
     let answer = prompt("Choose! Rock, Paper, or Scissors?"); //prompts use to choose one of three options
 
     function capitalizeAnswer(x) {
-    let first = x.charAt(0).toUpperCase();
-    let rest = x.slice(1).toLowerCase();
-    return first+rest;
+    let newAnswer = x.charAt(0).toUpperCase() + x.slice(1).toLowerCase();
+    return newAnswer;
     };
     console.log(capitalizeAnswer(answer));
     //function to format users response to have first letter be a capital letter
@@ -18,7 +17,7 @@
     let userSelection = capitalizeAnswer(answer);
     console.log(userSelection);
     
-    let computerSelection = choice;
+    let computerSelection = getComputerChoice();
     console.log(computerSelection);
     //assigns the users choice and computers choice to separate variables
 
