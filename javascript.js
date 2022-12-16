@@ -40,12 +40,12 @@
         }
     };
     console.log(playRound(userSelection,computerSelection));
-    /* Rock Paper Scissors game. Gives a message with the results and awards a point for
+        /* Rock Paper Scissors game. Gives a message with the results and awards a point for
     each possible outcome. Gives an error message if user enters an improper response.
     Runs and logs one round. */
-
+        
     let computerScoreMessage = "Computer Score: " + computerScore;
     let userScoreMessage = "Player Score: " + userScore;
     console.log(userScoreMessage);
     console.log(computerScoreMessage);
-        //Creates containers combining a message with the score of the round played. Logs results
+        //Creates containers combining a message with the score of the round
