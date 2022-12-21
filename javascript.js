@@ -1,27 +1,19 @@
-    let answer = prompt("Choose! Rock, Paper, or Scissors?"); 
+    let answer = prompt("Choose! Rock, Paper, or Scissors?");
         //prompts user to choose one of three options
-
-    let userSelection;
-    let computerSelection;
+    let userSelection = answer[0].toUpperCase() + answer.slice(1).toLowerCase();
+        //Formats users answer to appear with first letter as a capital
+    
+    let options = ["Rock", "Paper", "Scissors"];
+    let computerSelection = options[Math.floor(Math.random()*3)];
+        //Creates random choice for computer between Rock, Paper, and Scissors
+        
+    console.log(userSelection);
+    console.log(computerSelection);
+    
     let userScore = 0;
     let computerScore = 0;
-        //create containers for users and computers choice and score
+        //create containers for users and computers score
 
-    function capitalizeAnswer(x) {
-        return userSelection = x[0].toUpperCase() + x.slice(1).toLowerCase();
-    };
-    console.log(capitalizeAnswer(answer));
-        /*function to format users response to have first letter be a capital letter 
-    and assign the return to the correct variable. Logs function */
-    
-    function getComputerChoice() {
-    let options = ["Rock", "Paper", "Scissors"];
-        return computerSelection = options[Math.floor(Math.random()*options.length)];
-    };
-    console.log(getComputerChoice());
-        /*function to generate a random choice for the computer between Rock Paper and Scissors 
-    and assign the return to the correct variable. Logs function */
-    
     function playRound(user, computer) {
         if (user === "Rock" && computer === "Paper" ||
         user === "Paper" && computer === "Scissors" ||
