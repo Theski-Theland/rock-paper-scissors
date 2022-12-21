@@ -1,7 +1,7 @@
     let answer = prompt("Choose! Rock, Paper, or Scissors?");
-        //prompts user to choose one of three options
     let userSelection = answer[0].toUpperCase() + answer.slice(1).toLowerCase();
-        //Formats users answer to appear with first letter as a capital
+        /* Prompts user to choose between Rock, Paper, and Scissors then formats 
+        users answer to appear with first letter as a capital */
     
     let options = ["Rock", "Paper", "Scissors"];
     let computerSelection = options[Math.floor(Math.random()*3)];
