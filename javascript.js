@@ -1,12 +1,5 @@
 function game() {
 
-    function computerChoice() {
-        let options = ["Rock", "Paper", "Scissors"];
-        let computerRandom = options[Math.floor(Math.random()*3)];
-        return computerRandom;
-    }
-    //Creates random choice for computer between Rock, Paper, and Scissors
-
     let userScore = 0;
     let computerScore = 0;
     let userSelection;
@@ -14,6 +7,13 @@ function game() {
     let answer;
 
     //Containers for different variables needed for the game
+
+    function computerChoice() {
+        let options = ["Rock", "Paper", "Scissors"];
+        computerSelection = options[Math.floor(Math.random()*3)];
+        return computerSelection;
+    }
+    //Creates random choice for computer between Rock, Paper, and Scissors
     
     for (i=0;i<5;i++){
         answer = prompt("Choose! Rock, Paper, or Scissors?");
@@ -22,7 +22,6 @@ function game() {
         users answer to appear with first letter as a capital */
 
         computerChoice();
-        computerSelection = computerChoice();
         // Function call to generate computers choice for each round
 
         console.log(userSelection);
@@ -58,7 +57,7 @@ function game() {
     } else if (computerScore > userScore) {
         alert ("You lost the game " + computerScore + " to " + userScore + "!")
     } else {
-        alert (userScore + " to " + computerScore + "! The game is a tie!")
+        alert (userScore + " to " + computerScore + "! The game ended in a tie!")
     };
 }
 
