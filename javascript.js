@@ -5,7 +5,6 @@ function game() {
     let userSelection;
     let computerSelection;
     let answer;
-
     //Containers for different variables needed for the game
 
     function computerChoice() {
@@ -59,6 +58,7 @@ function game() {
     } else {
         alert (userScore + " to " + computerScore + "! The game ended in a tie!")
     };
+    //Alert message for results of the 5 round game
 }
 
 console.log(game());
