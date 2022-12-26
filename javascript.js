@@ -10,7 +10,7 @@ function game() {
     let userScore = 0;
     let computerScore = 0;
     let userSelection;
-    let computerSelection = computerChoice();
+    let computerSelection;
     let answer;
 
     //Containers for different variables needed for the game
@@ -22,6 +22,7 @@ function game() {
         users answer to appear with first letter as a capital */
 
         computerChoice();
+        computerSelection = computerChoice();
         // Function call to generate computers choice for each round
 
         console.log(userSelection);
@@ -62,4 +63,3 @@ function game() {
 }
 
 console.log(game());
-
