@@ -4,14 +4,14 @@ function game() {
     let userSelection;
     let computerSelection;
     let answer;
-    //Containers for different variables needed for the game
+    // Containers for different variables needed for the game
   
     function computerChoice() {
       let options = ["Rock", "Paper", "Scissors"];
       computerSelection = options[Math.floor(Math.random() * 3)];
       return computerSelection;
     }
-    //Creates random choice for computer between Rock, Paper, and Scissors
+    // Creates random choice for computer between Rock, Paper, and Scissors
   
     for (i = 0; i < 5; i++) {
       answer = prompt("Choose! Rock, Paper, or Scissors?");
@@ -73,7 +73,7 @@ function game() {
           alert("Bad choice! Refresh and try again!");
         }
       }
-      //Round of Rock, Paper, Scissors with results and messages for each possible outcome
+      // Round of Rock, Paper, Scissors with results and messages for each possible outcome
   
       console.log(playRound(userSelection, computerSelection));
     }
@@ -85,7 +85,7 @@ function game() {
     } else {
       alert(userScore + " to " + computerScore + "! The game ended in a tie!");
     }
-    //Alert message for results of the 5 round game
+    // Alert message for results of the 5 round game
   }
   
   console.log(game());
