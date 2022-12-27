@@ -8,12 +8,14 @@ function game() {
   
     function computerChoice() {
       let options = ["Rock", "Paper", "Scissors"];
-      computerSelection = options[Math.floor(Math.random() * 3)];
+      computerSelection = options[Math.floor(Math.random() * options.length)];
       return computerSelection;
     }
     // Creates random choice for computer between Rock, Paper, and Scissors
   
     for (i = 0; i < 5; i++) {
+    // Loop to play 5 rounds of game
+
       answer = prompt("Choose! Rock, Paper, or Scissors?");
       userSelection = answer[0].toUpperCase() + answer.slice(1).toLowerCase();
       /* Prompts user to choose between Rock, Paper, and Scissors then formats 
