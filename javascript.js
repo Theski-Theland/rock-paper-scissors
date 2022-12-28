@@ -35,13 +35,9 @@ function game() {
         ) {
           computerScore++;
           alert(
-            "Computer chose " +
-              computerSelection +
-              "! You lost this round! The score is " +
-              userScore +
-              " to " +
-              computerScore +
-              "."
+            "Computer chose " + computerSelection +
+            "! You lost this round! The score is " +
+            userScore + " to " + computerScore + "."
           );
           return userScore + " to " + computerScore;
         } else if (
@@ -51,28 +47,22 @@ function game() {
         ) {
           userScore++;
           alert(
-            "Computer chose " +
-              computerSelection +
-              "! You won this round! The score is " +
-              userScore +
-              " to " +
-              computerScore +
-              "."
+            "Computer chose " + computerSelection +
+            "! You won this round! The score is " +
+            userScore + " to " + computerScore + "."
           );
           return userScore + " to " + computerScore;
         } else if (user === computer) {
           alert(
-            "Computer chose " +
-              computerSelection +
-              "! It's a tie! The score is " +
-              userScore +
-              " to " +
-              computerScore +
-              "."
-          );
+            "Computer chose " + computerSelection +
+            "! It's a tie! The score is " +
+            userScore + " to " + computerScore + "."
+            );
           return userScore + " to " + computerScore;
         } else {
-          alert("Bad choice! Refresh and try again!");
+          alert(
+            "Bad choice! Refresh and try again!"
+            );
         }
       }
       // Round of Rock, Paper, Scissors with results and messages for each possible outcome
@@ -81,13 +71,22 @@ function game() {
     }
   
     if (userScore > computerScore) {
-      alert("You won the game " + userScore + " to " + computerScore + "!");
+      alert(
+        "You won the game " + userScore +
+        " to " + computerScore + "!"
+        );
     } else if (computerScore > userScore) {
-      alert("You lost the game " + computerScore + " to " + userScore + "!");
+      alert(
+        "You lost the game " + computerScore + 
+        " to " + userScore + "!"
+        );
     } else {
-      alert(userScore + " to " + computerScore + "! The game ended in a tie!");
+      alert(
+        userScore + " to " + computerScore +
+        "! The game ended in a tie!"
+        );
     }
     // Alert message for results of the 5 round game
   }
   
-  console.log(game());
+  console.log(game());  
