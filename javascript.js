@@ -13,7 +13,7 @@ function game() {
     }
     // Creates random choice for computer between Rock, Paper, and Scissors
   
-    for (i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
     // Loop to play 5 rounds of game
 
       answer = prompt("Choose! Rock, Paper, or Scissors?");
@@ -86,7 +86,7 @@ function game() {
         "! The game ended in a tie!"
         );
     }
-    // Alert message for results of the 5 round game
+    // Alert message for results of the 5 round game based on the score
   }
   
   console.log(game());  
