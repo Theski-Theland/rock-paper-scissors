@@ -35,24 +35,24 @@ function game() {
         computerScore++;
           if (userScore > computerScore) {
             alert(
-            "You chose " + userSelection + "! " +
+            "You chose " + userSelection + " and " +
             "Computer chose " + computerSelection +
-            "! You lost this round! But you're winning " +
+            "! You lost this round but you're winning " +
             userScore + " to " + computerScore + "."
           )
         } else if (computerScore > userScore) {
             alert(
-            "You chose " + userSelection + "! " +
+            "You chose " + userSelection + " and " +
             "Computer chose " + computerSelection +
             "! You lost this round! You're losing " +
             computerScore + " to " + userScore + "."
           )
         } else {
             alert(
-            "You chose " + userSelection + "! " +
+            "You chose " + userSelection + " and " +
             "Computer chose " + computerSelection +
-            "! The game is tied " + computerScore +
-            " to " + userScore + "."
+            "! You lost this round but the game is tied " + 
+            computerScore + " to " + userScore + "."
           )
         }
       } else if (
@@ -63,25 +63,25 @@ function game() {
         userScore++;
           if (userScore > computerScore) {
             alert(
-            "You chose " + userSelection + "! " +
+            "You chose " + userSelection + " and " +
             "Computer chose " + computerSelection +
             "! You won this round! You're winning " +
             userScore + " to " + computerScore + "."
           )
         } else if (computerScore > userScore) {
             alert(
-            "You chose " + userSelection + "! " +
+            "You chose " + userSelection + " and " +
             "Computer chose " + computerSelection +
-            "! You won this round! But you're losing " +
+            "! You won this round but you're losing " +
             computerScore + " to " + userScore + "."
           )
         } else {
             alert(
-            "You chose " + userSelection + "! " +
+            "You chose " + userSelection + " and " +
             "Computer chose " + computerSelection +
-            "! The game is tied " + computerScore +
-            " to " + userScore + "."
-          )
+            "! You won this round but the game is tied " +
+            computerScore + " to " + userScore + "."
+          ) 
         }
       } else if (user === computer) {
           alert(
