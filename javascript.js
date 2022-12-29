@@ -36,25 +36,25 @@ function game() {
           computerScore++;
             if (userScore > computerScore) {
               alert(
-                "You chose " + userSelection + "! " +
-                "Computer chose " + computerSelection +
-                "! You lost this round! But you're winning " +
-                userScore + " to " + computerScore + "."
-              )
-            } else if (computerScore > userScore) {
+              "You chose " + userSelection + "! " +
+              "Computer chose " + computerSelection +
+              "! You lost this round! But you're winning " +
+              userScore + " to " + computerScore + "."
+            )
+          } else if (computerScore > userScore) {
               alert(
-                "You chose " + userSelection + "! " +
-                "Computer chose " + computerSelection +
-                "! You lost this round! You're losing " +
-                computerScore + " to " + userScore + "."
-              )
-            } else {
+              "You chose " + userSelection + "! " +
+              "Computer chose " + computerSelection +
+              "! You lost this round! You're losing " +
+              computerScore + " to " + userScore + "."
+            )
+          } else {
               alert(
-                "You chose " + userSelection + "! " +
-                "Computer chose " + computerSelection +
-                "! The game is tied " + computerScore +
-                " to " + userScore + "."
-              )
+              "You chose " + userSelection + "! " +
+              "Computer chose " + computerSelection +
+              "! The game is tied " + computerScore +
+              " to " + userScore + "."
+            )
           }
         } else if (
           (user === "Paper" && computer === "Rock") ||
@@ -62,22 +62,22 @@ function game() {
           (user === "Rock" && computer === "Scissors")
         ) {
           userScore++;
-          if (userScore > computerScore) {
-            alert(
+            if (userScore > computerScore) {
+              alert(
               "You chose " + userSelection + "! " +
               "Computer chose " + computerSelection +
               "! You won this round! You're winning " +
               userScore + " to " + computerScore + "."
             )
           } else if (computerScore > userScore) {
-            alert(
+              alert(
               "You chose " + userSelection + "! " +
               "Computer chose " + computerSelection +
               "! You won this round! But you're losing " +
               computerScore + " to " + userScore + "."
             )
           } else {
-            alert(
+              alert(
               "You chose " + userSelection + "! " +
               "Computer chose " + computerSelection +
               "! The game is tied " + computerScore +
@@ -86,36 +86,37 @@ function game() {
           }
         } else if (user === computer) {
             alert(
-              "You both chose " + userSelection +
-              "! The score is still " + userScore + 
-              " to " + computerScore + "."
-            )
+            "You both chose " + userSelection +
+            "! The score is still " + userScore + 
+            " to " + computerScore + "."
+          )
         } else {
-          alert(
+            alert(
             "Bad choice! Refresh and try again!"
           );
         }
       }
-      // Round of Rock, Paper, Scissors with results and messages for each possible outcome
+      /* Round of Rock, Paper, Scissors with results and messages 
+        for each possible outcome with a score update. */
   
       console.log(playRound(userSelection, computerSelection));
     }
   
     if (userScore > computerScore) {
       alert(
-        "You won the game " + userScore +
-        " to " + computerScore + "!"
-        );
+      "You won the game " + userScore +
+      " to " + computerScore + "!"
+      );
     } else if (computerScore > userScore) {
-      alert(
+        alert(
         "You lost the game " + computerScore + 
         " to " + userScore + "!"
-        );
+      );
     } else {
-      alert(
+        alert(
         userScore + " to " + computerScore +
         "! The game ended in a tie!"
-        );
+      );
     }
     // Alert message for results of the 5 round game based on the score
   }
