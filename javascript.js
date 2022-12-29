@@ -9,14 +9,13 @@ function game() {
   function randomizeComputerChoice() {
     let options = ["Rock", "Paper", "Scissors"];
     computerSelection = options[Math.floor(Math.random() * options.length)];
-    return computerSelection;
   }
   // Creates random choice for computer between Rock, Paper, and Scissors
 
-  for (let i = 0; i < 5; i++) {
+  for (let i = 1; i < 6; i++) {
   // Loop to play 5 rounds of game
 
-    answer = prompt("Choose! Rock, Paper, or Scissors?");
+    answer = prompt("Round " + i + " of 5! " + "Choose! Rock, Paper, or Scissors?");
     userSelection = answer[0].toUpperCase() + answer.slice(1).toLowerCase();
     /* Prompts user to choose between Rock, Paper, and Scissors then
       formats users answer to appear with first letter as a capital */
@@ -101,7 +100,7 @@ function game() {
 
     console.log(playRound(userSelection, computerSelection));
   }
-  
+
   if (userScore > computerScore) {
     alert(
     "You won the game " + userScore +
@@ -119,6 +118,6 @@ function game() {
     );
   }
   // Alert message for results of the 5 round game based on the score
-}
-  
+  }
+
   console.log(game());
