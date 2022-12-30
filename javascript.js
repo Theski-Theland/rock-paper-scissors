@@ -30,83 +30,82 @@ function game() {
         (computer === "Rock" && user === "Scissors")
       ) {
         computerScore++;
-          if (userScore > computerScore) {
-            alert(
-            "You chose " + userSelection + " and " +
-            "Computer chose " + computerSelection +
-            "! You lost this round but you're winning " +
-            userScore + " to " + computerScore + "."
-          )
-        } else if (computerScore > userScore) {
-            alert(
-            "You chose " + userSelection + " and " +
-            "Computer chose " + computerSelection +
-            "! You lost this round! You're losing " +
-            computerScore + " to " + userScore + "."
-          )
-        } else {
-            alert(
-            "You chose " + userSelection + " and " +
-            "Computer chose " + computerSelection +
-            "! You lost this round but the game is tied " + 
-            computerScore + " to " + userScore + "."
-          )
-        }
-      } else if (
+        if (userScore > computerScore) {
+          alert(
+          "You chose " + userSelection + " and " +
+          "Computer chose " + computerSelection +
+          "! You lost this round but you're winning " +            
+          userScore + " to " + computerScore + "."
+        )
+      } else if (computerScore > userScore) {
+          alert(
+          "You chose " + userSelection + " and " +
+          "Computer chose " + computerSelection +
+         "! You lost this round! You're losing " +
+          computerScore + " to " + userScore + "."
+        )
+      } else {
+          alert(
+          "You chose " + userSelection + " and " +
+          "Computer chose " + computerSelection +
+          "! You lost this round but the game is tied " + 
+          computerScore + " to " + userScore + "."
+         )
+      }
+    } else if (
         (user === "Paper" && computer === "Rock") ||
         (user === "Scissors" && computer === "Paper") ||
         (user === "Rock" && computer === "Scissors")
       ) {
         userScore++;
-          if (userScore > computerScore) {
-            alert(
-            "You chose " + userSelection + " and " +
-            "Computer chose " + computerSelection +
-            "! You won this round! You're winning " +
-            userScore + " to " + computerScore + "."
-          )
-        } else if (computerScore > userScore) {
-            alert(
-            "You chose " + userSelection + " and " +
-            "Computer chose " + computerSelection +
-            "! You won this round but you're losing " +
-            computerScore + " to " + userScore + "."
-          )
-        } else {
-            alert(
-            "You chose " + userSelection + " and " +
-            "Computer chose " + computerSelection +
-            "! You won this round but the game is tied " +
-            computerScore + " to " + userScore + "."
-          ) 
-        }
-      } else if (user === computer) {
-        i--;
-          if (userScore > computerScore) {
-            alert(
-            "You both chose " + userSelection +
-            "! The score is still " + userScore + 
-            " to " + computerScore + "."
-          )
-        } else if (computerScore >= userScore) {
-            alert(
-            "You both chose " + userSelection +
-            "! The score is still " + computerScore + 
-            " to " + userScore + "."
-          )
-        }
-      } else {
-          i--;
+        if (userScore > computerScore) {
           alert(
-          "Bad choice! Refresh and try again!"
-        );
+          "You chose " + userSelection + " and " +
+          "Computer chose " + computerSelection +
+          "! You won this round! You're winning " +
+          userScore + " to " + computerScore + "."
+        )
+      } else if (computerScore > userScore) {
+          alert(
+          "You chose " + userSelection + " and " +
+          "Computer chose " + computerSelection +
+          "! You won this round but you're losing " +
+          computerScore + " to " + userScore + "."
+        )
+      } else {
+          alert(
+          "You chose " + userSelection + " and " +
+          "Computer chose " + computerSelection +
+          "! You won this round but the game is tied " +
+          computerScore + " to " + userScore + "."
+        ) 
       }
+    } else if (user === computer) {
+      i--;
+        if (userScore > computerScore) {
+          alert(
+          "You both chose " + userSelection +
+          "! The score is still " + userScore + 
+          " to " + computerScore + "."
+        )
+      } else if (computerScore >= userScore) {
+          alert(
+          "You both chose " + userSelection +
+          "! The score is still " + computerScore + 
+          " to " + userScore + "."
+        )
+      }
+    } else {
+        i--;
+        alert(
+        "Bad choice! Refresh and try again!"
+      );
     }
+  }
+    playRound(userSelection, computerSelection);
+  }
     /* Round of Rock, Paper, Scissors with results and messages 
       for each possible outcome with a score update. */
-
-    console.log(playRound(userSelection, computerSelection));
-  }
 
   if (userScore > computerScore) {
     alert(
@@ -125,6 +124,6 @@ function game() {
     );
   }
   // Alert message for results of the 5 round game based on the score
-  }
+}
 
   console.log(game());
