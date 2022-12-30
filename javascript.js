@@ -23,9 +23,6 @@ function game() {
     randomizeComputerChoice();
     // Function call to generate computers choice for each round
 
-    console.log(userSelection);
-    console.log(computerSelection);
-
     function playRound(user, computer) {
       if (
         (computer === "Paper" && user === "Rock") ||
@@ -84,12 +81,22 @@ function game() {
           ) 
         }
       } else if (user === computer) {
-          alert(
-          "You both chose " + userSelection +
-          "! The score is still " + userScore + 
-          " to " + computerScore + "."
-        )
+        i--;
+          if (userScore > computerScore) {
+            alert(
+            "You both chose " + userSelection +
+            "! The score is still " + userScore + 
+            " to " + computerScore + "."
+          )
+        } else if (computerScore >= userScore) {
+            alert(
+            "You both chose " + userSelection +
+            "! The score is still " + computerScore + 
+            " to " + userScore + "."
+          )
+        }
       } else {
+          i--;
           alert(
           "Bad choice! Refresh and try again!"
         );
