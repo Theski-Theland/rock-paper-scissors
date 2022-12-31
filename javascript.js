@@ -15,14 +15,19 @@ function game() {
   for (let i = 1; i < 6; i++) {
     // Loop to play 5 rounds of Rock, Paper, Scissors
 
-    answer = prompt("Round " + i + " of 5! " + "Choose! Rock, Paper, or Scissors?");
-    userSelection = answer[0].toUpperCase() + answer.slice(1).toLowerCase();
-    /* Prompts user to choose between Rock, Paper, and Scissors then
+    if (userScore == 3 || computerScore == 3) {
+      break;
+    }
+      //Makes game end once player or computer won majority of rounds
+
+      else {
+      answer = prompt("Round " + i + " of 5! " + "Choose! Rock, Paper, or Scissors?");
+      userSelection = answer[0].toUpperCase() + answer.slice(1).toLowerCase();
+      /* Prompts user to choose between Rock, Paper, and Scissors then
       formats users answer to appear with first letter as a capital */
-
-    randomizeComputerChoice();
-    // Function call to generate computers choice for each round
-
+      randomizeComputerChoice();
+      // Function call to generate computers choice for each round
+    }
     function playRound(user, computer) {
       if (
         computer === "Paper" && user === "Rock" ||
@@ -50,7 +55,7 @@ function game() {
           "Computer chose " + computerSelection +
           "! You lost this round but the game is tied " + 
           computerScore + " to " + userScore + "."
-         )
+        )
       }
     } else if (
         user === "Paper" && computer === "Rock" ||
