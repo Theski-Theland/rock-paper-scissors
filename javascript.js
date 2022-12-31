@@ -117,15 +117,10 @@ function game() {
     "You won the game " + userScore +
     " to " + computerScore + "!"
     );
-  } else if (computerScore > userScore) {
+  } else {
       alert(
       "You lost the game " + computerScore + 
       " to " + userScore + "!"
-    );
-  } else {
-      alert(
-      userScore + " to " + computerScore +
-      "! The game ended in a tie!"
     );
   }
   // Alert message for results of the 5 round game based on the score
