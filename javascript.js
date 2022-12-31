@@ -42,13 +42,19 @@ function game() {
           "! You lost this round but you're winning " +            
           userScore + " to " + computerScore + "."
         )
+      } else if (computerScore > userScore && computerScore == 3) {
+        alert(
+          "You chose " + userSelection + " and " +
+          "Computer chose " + computerSelection +
+         "! You lost this round!"
+       )
       } else if (computerScore > userScore) {
-          alert(
+        alert(
           "You chose " + userSelection + " and " +
           "Computer chose " + computerSelection +
          "! You lost this round! You're losing " +
-          computerScore + " to " + userScore + "."
-        )
+         computerScore + " to " + userScore + "."
+       )
       } else {
           alert(
           "You chose " + userSelection + " and " +
@@ -63,14 +69,21 @@ function game() {
         user === "Rock" && computer === "Scissors"
       ) {
         userScore++;
-        if (userScore > computerScore) {
+        if (userScore > computerScore && userScore == 3) {
           alert(
+          "You chose " + userSelection + " and " +
+          "Computer chose " + computerSelection +
+          "! You won this round!"
+        )
+      } else if (userScore > computerScore) {
+        alert(
           "You chose " + userSelection + " and " +
           "Computer chose " + computerSelection +
           "! You won this round! You're winning " +
           userScore + " to " + computerScore + "."
         )
-      } else if (computerScore > userScore) {
+      }
+        else if (computerScore > userScore) {
           alert(
           "You chose " + userSelection + " and " +
           "Computer chose " + computerSelection +
