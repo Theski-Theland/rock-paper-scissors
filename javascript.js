@@ -13,7 +13,7 @@ function game() {
   // Creates random choice for computer between Rock, Paper, and Scissors
 
   for (let i = 1; i < 6; i++) {
-  // Loop to play 5 rounds of game
+    // Loop to play 5 rounds of Rock, Paper, Scissors
 
     answer = prompt("Round " + i + " of 5! " + "Choose! Rock, Paper, or Scissors?");
     userSelection = answer[0].toUpperCase() + answer.slice(1).toLowerCase();
@@ -25,9 +25,9 @@ function game() {
 
     function playRound(user, computer) {
       if (
-        (computer === "Paper" && user === "Rock") ||
-        (computer === "Scissors" && user === "Paper") ||
-        (computer === "Rock" && user === "Scissors")
+        computer === "Paper" && user === "Rock" ||
+        computer === "Scissors" && user === "Paper" ||
+        computer === "Rock" && user === "Scissors"
       ) {
         computerScore++;
         if (userScore > computerScore) {
@@ -53,9 +53,9 @@ function game() {
          )
       }
     } else if (
-        (user === "Paper" && computer === "Rock") ||
-        (user === "Scissors" && computer === "Paper") ||
-        (user === "Rock" && computer === "Scissors")
+        user === "Paper" && computer === "Rock" ||
+        user === "Scissors" && computer === "Paper" ||
+        user === "Rock" && computer === "Scissors"
       ) {
         userScore++;
         if (userScore > computerScore) {
