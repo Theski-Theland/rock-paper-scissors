@@ -4,6 +4,7 @@ function game() {
   let userSelection;
   let computerSelection;
   let answer;
+  let rounds;
   // Containers for different variables needed for the game
 
   function randomizeComputerChoice() {
@@ -11,17 +12,23 @@ function game() {
     computerSelection = options[Math.floor(Math.random() * options.length)];
   }
   // Creates random choice for computer between Rock, Paper, and Scissors
-
-  for (let i = 1; i < 6; i++) {
+  for (let j = 0; j < 1; j++) {
+    rounds = prompt("How many rounds?");
+    if (rounds % 2 == 0) {
+      alert("Must be an odd number! Choose again please.");
+      j--;
+    }
+  }
+  for (let i = 1; i < rounds; i++) {
     // Loop to play 5 rounds of Rock, Paper, Scissors
 
-    if (userScore == 3 || computerScore == 3) {
+    if (userScore == (Math.ceil(rounds / 2)) || computerScore == (Math.ceil(rounds / 2))) {
       break;
     }
       //Makes game end once player or computer won majority of rounds
 
       else {
-      answer = prompt("Round " + i + " of 5! " + "Choose! Rock, Paper, or Scissors?");
+      answer = prompt("Round " + i + " of " + rounds + "! "  + "Choose! Rock, Paper, or Scissors?");
       userSelection = answer[0].toUpperCase() + answer.slice(1).toLowerCase();
       /* Prompts user to choose between Rock, Paper, and Scissors then
       formats users answer to appear with first letter as a capital */
