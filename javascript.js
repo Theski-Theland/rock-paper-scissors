@@ -12,6 +12,7 @@ function game() {
     computerSelection = options[Math.floor(Math.random() * options.length)];
   }
   // Creates random choice for computer between Rock, Paper, and Scissors
+  
   for (let j = 0; j < 1; j++) {
     rounds = prompt("How many rounds?");
     if (rounds % 2 == 0) {
@@ -19,16 +20,19 @@ function game() {
       j--;
     }
   }
+  // Prompts player to choose how many rounds for the game.
+
   for (let i = 1; i < rounds; i++) {
-    // Loop to play 5 rounds of Rock, Paper, Scissors
+    // Loop to play desired rounds of Rock, Paper, Scissors
 
     if (userScore == (Math.ceil(rounds / 2)) || computerScore == (Math.ceil(rounds / 2))) {
       break;
     }
-      //Makes game end once player or computer won majority of rounds
+      //Makes game end once player or computer won majority of rounds chosen
 
       else {
-      answer = prompt("Round " + i + " of " + rounds + "! "  + "Choose! Rock, Paper, or Scissors?");
+      answer = prompt(
+        "Round " + i + " of " + rounds + "! " + "Choose! Rock, Paper, or Scissors?");
       userSelection = answer[0].toUpperCase() + answer.slice(1).toLowerCase();
       /* Prompts user to choose between Rock, Paper, and Scissors then
       formats users answer to appear with first letter as a capital */
@@ -53,13 +57,13 @@ function game() {
         alert(
           "You chose " + userSelection + " and " +
           "Computer chose " + computerSelection +
-         "! You lost this round!"
+          "! You lost this round!"
        )
       } else if (computerScore > userScore) {
         alert(
           "You chose " + userSelection + " and " +
           "Computer chose " + computerSelection +
-         "! You lost this round! You're losing " +
+          "! You lost this round! You're losing " +
          computerScore + " to " + userScore + "."
        )
       } else {
@@ -143,7 +147,7 @@ function game() {
       " to " + userScore + "!"
     );
   }
-  // Alert message for results of the 5 round game based on the score
+  // Alert message for results of the game based on who won.
 }
 
   console.log(game());
