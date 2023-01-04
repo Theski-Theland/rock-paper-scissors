@@ -53,7 +53,7 @@ function game() {
           "! You lost this round but you're winning " +            
           userScore + " to " + computerScore + "."
         )
-      } else if (computerScore > userScore && computerScore == 3) {
+      } else if (computerScore > userScore && computerScore == Math.ceil(rounds / 2)) {
         alert(
           "You chose " + userSelection + " and " +
           "Computer chose " + computerSelection +
@@ -80,7 +80,7 @@ function game() {
         user === "Rock" && computer === "Scissors"
       ) {
         userScore++;
-        if (userScore > computerScore && userScore == 3) {
+        if (userScore > computerScore && userScore == Math.ceil(rounds / 2)) {
           alert(
           "You chose " + userSelection + " and " +
           "Computer chose " + computerSelection +
