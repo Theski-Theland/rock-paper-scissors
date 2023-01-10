@@ -1,0 +1,108 @@
+body {
+    background: url("images/background.jpg") no-repeat center center/ cover;
+    height: 100vh;
+    color: darkgreen;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: bisque;
+    width: 600px;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-evenly; 
+}
+
+.score-number {
+    text-align: center;
+}
+
+.score {
+    text-align: center;
+    width: 250px;
+    height: 100px;
+    font-size: 36px;
+    border: 2px solid black;
+    border-radius:  20px;
+    background-color: bisque;
+    padding-top: 20px;
+}
+
+.game-messages {
+    text-align: center;
+    font-size: 48px;
+    margin: 40px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: bisque;
+    padding: 20px;
+}
+
+.play-round {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.selection {
+    width: 175px;
+    height: 175px;
+    border: 5px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: bisque;
+}
+
+.vs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 36px;
+}
+
+.selection.player {
+    margin-left: 150px;
+}
+
+.selection.computer {
+    margin-right: 150px;
+}
+
+.choose-message {
+    text-align: center;
+    font-size: 36px;
+    margin: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: bisque;
+    padding: 20px;
+}
+
+.options {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.rock,
+.paper, 
+.scissors {
+    border: 5px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: bisque;
+}
+
+.image-text {
+    text-align: center;
+}
