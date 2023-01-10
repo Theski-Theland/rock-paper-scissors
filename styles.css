@@ -19,7 +19,20 @@ body {
     height: 50px;
     width: 50px;
     background-color: bisque;
-    margin-top: -25px;
+    border: 0;
+}
+
+form {
+    display: flex;
+}
+
+.submit {
+    height: 50px;
+    width: 50px;
+    background-color: bisque;
+    white-space: initial;
+    border: 0;
+    margin-left: 2px;
 }
 
 .title {
@@ -35,7 +48,7 @@ body {
 
 .scoreboard {
     display: flex;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
 }
 
 .score-number {
@@ -75,6 +88,13 @@ body {
     border-radius: 20px;
     padding: 10px;
     background-color: bisque;
+    vertical-align: middle;
+}
+
+option,
+select {
+    font-size: 24px;
+    color: darkgreen;
 }
 
 .vs {
@@ -107,7 +127,7 @@ body {
     justify-content: space-evenly;
 }
 
-.btn {
+.options > .btn {
     border: 5px solid black;
     border-radius: 20px;
     padding: 10px;
@@ -116,4 +136,9 @@ body {
 
 .image-text {
     text-align: center;
+}
+
+.btn:hover {
+    background-color: brown;
+    cursor: pointer;
 }
