@@ -95,6 +95,7 @@ option,
 select {
     font-size: 24px;
     color: darkgreen;
+    text-align: center;
 }
 
 .vs {
