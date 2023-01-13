@@ -3,12 +3,15 @@ let computerSelection;
 let userSelection;
 let usersScore = 0;
 let computersScore = 0;
-let usersScoreText = document.getElementById('player-score');
-let computersScoreText = document.getElementById('computer-score');
-
+const usersScoreText = document.getElementById('player-score');
+const computersScoreText = document.getElementById('computer-score');
+let gameMessage;
+let gameMessageText = document.getElementById('game-message');
 
 
 function gameRounds(){
+  computersScoreText.textContent = computersScore;
+  usersScoreText.textContent = usersScore;
   return rounds = document.getElementById('user-input').value;
 };
 //Function to pull users choice for how many rounds to play
