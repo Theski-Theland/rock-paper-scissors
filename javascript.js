@@ -3,6 +3,10 @@ let computerSelection;
 let userSelection;
 let usersScore = 0;
 let computersScore = 0;
+let usersScoreText = document.getElementById('player-score');
+let computersScoreText = document.getElementById('computer-score');
+
+
 
 function gameRounds(){
   return rounds = document.getElementById('user-input').value;
@@ -45,7 +49,8 @@ function playRound(user,computer) {
       user ===  "Paper" && computer === "Rock" ||
       user === "Scissors" && computer === "Paper"
     ) {
-      usersScore++;
+      usersScoreText.textContent = ++usersScore;
+      computersScoreText.textContent = computersScore;
       console.log(computerSelection);
       console.log(userSelection);
       console.log(computersScore);
@@ -63,7 +68,8 @@ function playRound(user,computer) {
       computer ===  "Paper" && user === "Rock" ||
       computer === "Scissors" && user === "Paper"
     ) {
-      computersScore++;
+      computersScoreText.textContent = ++computersScore;
+      usersScoreText.textContent = usersScore;
       console.log(computerSelection);
       console.log(userSelection);
       console.log(computersScore);
