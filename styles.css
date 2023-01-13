@@ -92,8 +92,9 @@ form {
 }
 
 option,
-select {
-    font-size: 24px;
+select,
+input {
+    font-size: 16px;
     color: darkgreen;
     text-align: center;
 }
