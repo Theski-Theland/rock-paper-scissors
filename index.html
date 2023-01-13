@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Rock, Paper, Scissors, Shoot!</title>
-        <!-- <script src="javascript.js" defer></script> -->
+        <script src="javascript.js" defer></script>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
@@ -26,13 +26,13 @@
         <div class="container-message">
             <div class="game-messages">How many rounds?</div>
             <form>
-                <select required class="answer">
+                <select required id="user-input" class="answer">
                         <option></option>
                         <option>3</option>
                         <option>5</option>
                         <option>7</option>
                 </select>
-                <input class="submit btn" type="submit" value="Let's Play!"/>
+                <input class="submit btn" type="button" onclick="gameRounds()" value="Let's Play!"/>
             </form> 
         </div>
         <div class="play-round">
@@ -45,9 +45,9 @@
             <div class="choose-message">Rock, Paper, Scissors! Make your choice!</div>
         </div>
         <div class="options">
-            <button type="button" class="rock btn"><img src="images/rock.jpg" alt ="A sturdy rock" width="150px" height="150px"></button>
-            <button type="button" class="paper btn"><img src="images/paper.jpg" alt ="A piece of paper" width="150px" height="150px"></button>
-            <button type ="button" class="scissors btn"><img src="images/scissors.png" alt ="Sharp scissors" width="150px" height="150px"></button>
+            <button type="button" id="rock" onclick="userChoice()" value="Rock" class="rock btn"><img src="images/rock.jpg" alt ="A sturdy rock" width="150px" height="150px"></button>
+            <button type="button" id="paper" onclick="userChoice()" value="Paper" class="paper btn"><img src="images/paper.jpg" alt ="A piece of paper" width="150px" height="150px"></button>
+            <button type="button" id="scissors" onclick="userChoice()" value="Scissors" class="scissors btn"><img src="images/scissors.png" alt ="Sharp scissors" width="150px" height="150px"></button>
         </div>
     </body>
 </html>
