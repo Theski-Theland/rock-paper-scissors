@@ -3,8 +3,10 @@ let computerSelection;
 let userSelection;
 let usersScore = 0;
 let computersScore = 0;
-const usersScoreText = document.getElementById('player-score');
-const computersScoreText = document.getElementById('computer-score');
+let usersScoreText = document.getElementById('player-score');
+let computersScoreText = document.getElementById('computer-score');
+let imgComputer = document.getElementById('img-computer');
+let imgUser = document.getElementById('img-player');
 let gameMessageText = document.getElementById('game-message');
 
 
@@ -23,21 +25,51 @@ function randomizeComputerChoice() {
 //Function to randomly select computers choice
 
 function chooseRock() {
+  if (rounds !== undefined) {
   userSelection = document.getElementById('rock').value;
   computerSelection = randomizeComputerChoice();
+  if (computerSelection === "Rock") {
+    imgComputer.src="images/rock.jpg";
+  } else if (computerSelection === "Paper") {
+    imgComputer.src="images/paper.jpg";
+  } else {
+    imgComputer.src="images/scissors.png";
+  };
+  imgUser.src="images/rock.jpg";
   playRound(userSelection,computerSelection);
+  }
 }
 
 function choosePaper() {
+  if (rounds !== undefined) {
   userSelection = document.getElementById('paper').value;
   computerSelection = randomizeComputerChoice();
+  if (computerSelection === "Rock") {
+    imgComputer.src="images/rock.jpg";
+  } else if (computerSelection === "Paper") {
+    imgComputer.src="images/paper.jpg";
+  } else {
+    imgComputer.src="images/scissors.png";
+  };
+  imgUser.src="images/paper.jpg";
   playRound(userSelection,computerSelection);
+  }
 }
 
 function chooseScissors() {
+  if (rounds !== undefined) {
   userSelection = document.getElementById('scissors').value;
   computerSelection = randomizeComputerChoice();
+  if (computerSelection === "Rock") {
+    imgComputer.src="images/rock.jpg";
+  } else if (computerSelection === "Paper") {
+    imgComputer.src="images/paper.jpg";
+  } else {
+    imgComputer.src="images/scissors.png";
+  };
+  imgUser.src="images/scissors.png";
   playRound(userSelection,computerSelection);
+  }
 }
 
 function playRound(user,computer) {
@@ -55,13 +87,17 @@ function playRound(user,computer) {
       usersScoreText.textContent = ++usersScore;
       computersScoreText.textContent = computersScore;
       gameMessageText.textContent = "Nice! " + user + " beats " + computer + " !";
-        if (usersScore === Math.ceil(rounds / 2) || computersScore === Math.ceil(rounds / 2)) {
-          gameMessageText.textContent = "Game over! Choose how many rounds to play again.";
+      } if (usersScore === Math.ceil(rounds / 2)) {
+          gameMessageText.textContent = "Congratulations! You won!";
           usersScore = 0;
           computersScore = 0;
           rounds = undefined;
-        };
-    }
+        } else if (computersScore ===Math.ceil(rounds / 2)) {
+          gameMessageText.textContent = "You lost! Better luck next time!";
+          usersScore = 0;
+          computersScore = 0;
+          rounds = undefined;
+        }
     else if (
       computer === "Rock" && user === "Scissors" ||
       computer ===  "Paper" && user === "Rock" ||
@@ -70,11 +106,16 @@ function playRound(user,computer) {
       computersScoreText.textContent = ++computersScore;
       usersScoreText.textContent = usersScore;
       gameMessageText.textContent = "Uh-oh! " + computer + " beats " + user + " !";
-        if (usersScore === Math.ceil(rounds / 2) || computersScore === Math.ceil(rounds / 2)) {
-          gameMessageText.textContent = "Game over! Choose how many rounds to play again.";
+        if (usersScore === Math.ceil(rounds / 2)) {
+        gameMessageText.textContent = "Congratulations! You won!";
+        usersScore = 0;
+        computersScore = 0;
+        rounds = undefined;
+        } else if (computersScore ===Math.ceil(rounds / 2)) {
+          gameMessageText.textContent = "You lost! Better luck next time!";
           usersScore = 0;
           computersScore = 0;
           rounds = undefined;
-        };
+        }
     }
-};
+}
