@@ -120,7 +120,7 @@ function playRound(user, computer) {
   ) {
     if (computer === "Rock" && user === "Scissors") {
       rockWinSound.play();
-    } else if (user === "Scissors" && computer === "Paper") {
+    } else if (computer === "Scissors" && user === "Paper") {
       scissorsWinSound.play();
     } else {
       paperWinSound.play();
