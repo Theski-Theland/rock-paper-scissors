@@ -13,8 +13,8 @@ let gameMessageText = document.getElementById('game-message');
 function gameRounds(){
   computersScoreText.textContent = computersScore;
   usersScoreText.textContent = usersScore;
-  gameMessageText.textContent = "Let's begin!"
-  return rounds = document.getElementById('user-input').value;
+  rounds = document.getElementById('user-input').value;
+  gameMessageText.textContent = "Best of " + rounds + ". Good luck. Let's begin!"
 };
 //Function to pull users choice for how many rounds to play
 
