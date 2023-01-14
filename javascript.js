@@ -8,6 +8,9 @@ let computersScoreText = document.getElementById("computer-score");
 let imgComputer = document.getElementById("img-computer");
 let imgUser = document.getElementById("img-player");
 let gameMessageText = document.getElementById("game-message");
+let rockWinSound = new Audio('sound-effects/rock-win.mp3');
+let scissorsWinSound = new Audio('sound-effects/scissors-win.wav');
+let paperWinSound = new Audio('sound-effects/paper-win.wav');
 
 function gameRounds() {
   computersScoreText.textContent = computersScore;
@@ -89,6 +92,13 @@ function playRound(user, computer) {
     (user === "Paper" && computer === "Rock") ||
     (user === "Scissors" && computer === "Paper")
   ) {
+      if (user === "Rock" && computer === "Scissors") {
+        rockWinSound.play();
+      } else if (user === "Scissors" && computer === "Paper") {
+        scissorsWinSound.play();
+      } else {
+        paperWinSound.play();
+      }
     usersScoreText.textContent = ++usersScore;
     computersScoreText.textContent = computersScore;
     gameMessageText.textContent = "Nice! " + user + " beats " + computer + " !";
@@ -108,10 +118,18 @@ function playRound(user, computer) {
     (computer === "Paper" && user === "Rock") ||
     (computer === "Scissors" && user === "Paper")
   ) {
+      if (computer === "Rock" && user === "Scissors") {
+        rockWinSound.play();
+      } else if (user === "Scissors" && computer === "Paper") {
+        scissorsWinSound.play();
+      } else {
+        paperWinSound.play();
+      }
     computersScoreText.textContent = ++computersScore;
     usersScoreText.textContent = usersScore;
     gameMessageText.textContent =
-      "Uh-oh! " + computer + " beats " + user + " !";
+    "Uh-oh! " + computer + " beats " + user + " !";
+  }
     if (usersScore === Math.ceil(rounds / 2)) {
       gameMessageText.textContent = "Congratulations! You won!";
       usersScore = 0;
@@ -123,5 +141,4 @@ function playRound(user, computer) {
       computersScore = 0;
       rounds = undefined;
     }
-  }
 };
