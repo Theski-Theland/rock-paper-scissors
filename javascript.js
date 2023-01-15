@@ -18,8 +18,12 @@ function gameRounds() {
   imgComputer.src = "";
   imgUser.src = "";
   rounds = document.getElementById("user-input").value;
+  if (rounds == 3 || rounds == 5 || rounds == 7) {
   gameMessageText.textContent =
     "Best of " + rounds + ". Good luck. Let's begin!";
+  } else {
+    gameMessageText.textContent = "Choose how many rounds first!";  
+  }
 }
 //Function to pull users choice for how many rounds to play
 
@@ -30,9 +34,7 @@ function randomizeComputerChoice() {
 //Function to randomly select computers choice
 
 function chooseRock() {
-  if (rounds === undefined) {
-    gameMessageText.textContent = "Choose how many rounds first!";
-  } else {
+  if (rounds == 3 || rounds == 5 || rounds == 7) {
     userSelection = document.getElementById("rock").value;
     computerSelection = randomizeComputerChoice();
     if (computerSelection === "Rock") {
@@ -43,15 +45,15 @@ function chooseRock() {
       imgComputer.src = "images/scissors.png";
     }
     imgUser.src = "images/rock.jpg";
-    playRound(userSelection, computerSelection);
+    playRound(userSelection, computerSelection)
+  } else {
+    gameMessageText.textContent = "Choose how many rounds first!";
+    return;
   }
 }
 
 function choosePaper() {
-  if (rounds === undefined) {
-    gameMessageText.textContent = "Choose how many rounds first!";
-    return;
-  } else {
+  if (rounds == 3 || rounds == 5 || rounds == 7) {
     userSelection = document.getElementById("paper").value;
     computerSelection = randomizeComputerChoice();
     if (computerSelection === "Rock") {
@@ -63,13 +65,14 @@ function choosePaper() {
     }
     imgUser.src = "images/paper.jpg";
     playRound(userSelection, computerSelection);
+  } else {
+    gameMessageText.textContent = "Choose how many rounds first!";
+    return;
   }
 }
 
 function chooseScissors() {
-  if (rounds === undefined) {
-    gameMessageText.textContent = "Choose how many rounds first!";
-  } else {
+  if (rounds == 3 || rounds == 5 || rounds == 7) {
     userSelection = document.getElementById("scissors").value;
     computerSelection = randomizeComputerChoice();
     if (computerSelection === "Rock") {
@@ -81,10 +84,23 @@ function chooseScissors() {
     }
     imgUser.src = "images/scissors.png";
     playRound(userSelection, computerSelection);
+  } else {
+    gameMessageText.textContent = "Choose how many rounds first!";
+    return;
   }
 }
 
 function playRound(user, computer) {
+  let gameMessageWin =  [
+    "Good job! " + user + " beats " + computer + ".",
+    "Way to go! " + user + " beats " + computer + ".",
+    "Well done! " + user + " beats " + computer + ".",
+  ];
+  let gameMessageLose = [
+    "Oh no! " + computer + " beats " + user + ".",
+    "Shucks! " + computer + " beats " + user + ".",
+    "Unlucky! " + computer + " beats " + user + ".",
+  ];
   if (user === computer) {
     gameMessageText.textContent = "Tie! Choose again!";
   } else if (
@@ -101,18 +117,7 @@ function playRound(user, computer) {
     }
     usersScoreText.textContent = ++usersScore;
     computersScoreText.textContent = computersScore;
-    gameMessageText.textContent = "Nice! " + user + " beats " + computer + " !";
-  }
-  if (usersScore === Math.ceil(rounds / 2)) {
-    gameMessageText.textContent = "Congratulations! You won!";
-    usersScore = 0;
-    computersScore = 0;
-    rounds = undefined;
-  } else if (computersScore === Math.ceil(rounds / 2)) {
-    gameMessageText.textContent = "You lost! Better luck next time!";
-    usersScore = 0;
-    computersScore = 0;
-    rounds = undefined;
+    gameMessageText.textContent = gameMessageWin[Math.floor(Math.random() * gameMessageWin.length)];
   } else if (
     (computer === "Rock" && user === "Scissors") ||
     (computer === "Paper" && user === "Rock") ||
@@ -127,8 +132,7 @@ function playRound(user, computer) {
     }
     computersScoreText.textContent = ++computersScore;
     usersScoreText.textContent = usersScore;
-    gameMessageText.textContent =
-      "Uh-oh! " + computer + " beats " + user + " !";
+    gameMessageText.textContent = gameMessageLose[Math.floor(Math.random() * gameMessageWin.length)];
   }
   if (usersScore === Math.ceil(rounds / 2)) {
     gameMessageText.textContent = "Congratulations! You won!";
