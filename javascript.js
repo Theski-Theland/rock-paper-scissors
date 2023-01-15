@@ -11,6 +11,8 @@ let gameMessageText = document.getElementById("game-message");
 let rockWinSound = new Audio("sound-effects/rock-win.mp3");
 let scissorsWinSound = new Audio("sound-effects/scissors-win.wav");
 let paperWinSound = new Audio("sound-effects/paper-win.wav");
+let gameWinSound = new Audio("sound-effects/game-win.wav");
+let gameLoseSound = new Audio("sound-effects/game-loss.wav");
 
 function gameRounds() {
   computersScoreText.textContent = computersScore;
@@ -108,13 +110,6 @@ function playRound(user, computer) {
     (user === "Paper" && computer === "Rock") ||
     (user === "Scissors" && computer === "Paper")
   ) {
-    if (user === "Rock" && computer === "Scissors") {
-      rockWinSound.play();
-    } else if (user === "Scissors" && computer === "Paper") {
-      scissorsWinSound.play();
-    } else {
-      paperWinSound.play();
-    }
     usersScoreText.textContent = ++usersScore;
     computersScoreText.textContent = computersScore;
     gameMessageText.textContent = gameMessageWin[Math.floor(Math.random() * gameMessageWin.length)];
@@ -123,26 +118,36 @@ function playRound(user, computer) {
     (computer === "Paper" && user === "Rock") ||
     (computer === "Scissors" && user === "Paper")
   ) {
-    if (computer === "Rock" && user === "Scissors") {
-      rockWinSound.play();
-    } else if (computer === "Scissors" && user === "Paper") {
-      scissorsWinSound.play();
-    } else {
-      paperWinSound.play();
-    }
     computersScoreText.textContent = ++computersScore;
     usersScoreText.textContent = usersScore;
     gameMessageText.textContent = gameMessageLose[Math.floor(Math.random() * gameMessageWin.length)];
   }
   if (usersScore === Math.ceil(rounds / 2)) {
     gameMessageText.textContent = "Congratulations! You won!";
+    gameWinSound.play();
     usersScore = 0;
     computersScore = 0;
     rounds = undefined;
+    return;
   } else if (computersScore === Math.ceil(rounds / 2)) {
     gameMessageText.textContent = "You lost! Better luck next time!";
+    gameLoseSound.play();
     usersScore = 0;
     computersScore = 0;
     rounds = undefined;
+    return;
+  }
+  if 
+    (computer === "Rock" && user === "Scissors" || 
+    user === "Rock" && computer === "Scissors") {
+    rockWinSound.play();
+  } else if 
+    (computer === "Paper" && user === "Rock" ||
+    user === "Paper" && computer === "Rock") {
+    scissorsWinSound.play();
+  } else if 
+    (computer === "Scissors" && user === "Paper" ||
+    user === "Scissors" && computer === "Paper") {
+    paperWinSound.play();
   }
 }
