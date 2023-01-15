@@ -144,10 +144,10 @@ function playRound(user, computer) {
   } else if 
     (computer === "Paper" && user === "Rock" ||
     user === "Paper" && computer === "Rock") {
-    scissorsWinSound.play();
+    paperWinSound.play();
   } else if 
     (computer === "Scissors" && user === "Paper" ||
     user === "Scissors" && computer === "Paper") {
-    paperWinSound.play();
+    scissorsWinSound.play();
   }
 }
