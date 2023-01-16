@@ -47,7 +47,7 @@ function chooseRock() {
       imgComputer.src = "images/scissors.png";
     }
     imgUser.src = "images/rock.jpg";
-    playRound(userSelection, computerSelection)
+    playRound()
   } else {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
@@ -66,7 +66,7 @@ function choosePaper() {
       imgComputer.src = "images/scissors.png";
     }
     imgUser.src = "images/paper.jpg";
-    playRound(userSelection, computerSelection);
+    playRound();
   } else {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
@@ -85,43 +85,45 @@ function chooseScissors() {
       imgComputer.src = "images/scissors.png";
     }
     imgUser.src = "images/scissors.png";
-    playRound(userSelection, computerSelection);
+    playRound();
   } else {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
   }
 }
 
-function playRound(user, computer) {
+function playRound() {
   let gameMessageWin =  [
-    "Good job! " + user + " beats " + computer + ".",
-    "Way to go! " + user + " beats " + computer + ".",
-    "Well done! " + user + " beats " + computer + ".",
+    "Good job! " + userSelection + " beats " + computerSelection + ".",
+    "Way to go! " + userSelection + " beats " + computerSelection + ".",
+    "Well done! " + userSelection + " beats " + computerSelection + ".",
   ];
   let gameMessageLose = [
-    "Oh no! " + computer + " beats " + user + ".",
-    "Shucks! " + computer + " beats " + user + ".",
-    "Unlucky! " + computer + " beats " + user + ".",
+    "Oh no! " + computerSelection + " beats " + userSelection + ".",
+    "Shucks! " + computerSelection + " beats " + userSelection + ".",
+    "Unlucky! " + computerSelection + " beats " + userSelection + ".",
   ];
-  if (user === computer) {
+
+  if (userSelection === computerSelection) {
     gameMessageText.textContent = "Tie! Choose again!";
   } else if (
-    (user === "Rock" && computer === "Scissors") ||
-    (user === "Paper" && computer === "Rock") ||
-    (user === "Scissors" && computer === "Paper")
+    (userSelection === "Rock" && computerSelection === "Scissors") ||
+    (userSelection === "Paper" && computerSelection === "Rock") ||
+    (userSelection === "Scissors" && computerSelection === "Paper")
   ) {
     usersScoreText.textContent = ++usersScore;
     computersScoreText.textContent = computersScore;
     gameMessageText.textContent = gameMessageWin[Math.floor(Math.random() * gameMessageWin.length)];
   } else if (
-    (computer === "Rock" && user === "Scissors") ||
-    (computer === "Paper" && user === "Rock") ||
-    (computer === "Scissors" && user === "Paper")
+    (computerSelection === "Rock" && userSelection === "Scissors") ||
+    (computerSelection === "Paper" && userSelection === "Rock") ||
+    (computerSelection === "Scissors" && userSelection === "Paper")
   ) {
     computersScoreText.textContent = ++computersScore;
     usersScoreText.textContent = usersScore;
     gameMessageText.textContent = gameMessageLose[Math.floor(Math.random() * gameMessageWin.length)];
   }
+
   if (usersScore === Math.ceil(rounds / 2)) {
     gameMessageText.textContent = "Congratulations! You won!";
     gameWinSound.play();
@@ -137,17 +139,18 @@ function playRound(user, computer) {
     rounds = undefined;
     return;
   }
+
   if 
-    (computer === "Rock" && user === "Scissors" || 
-    user === "Rock" && computer === "Scissors") {
+    (computerSelection === "Rock" && userSelection === "Scissors" || 
+    userSelection === "Rock" && computerSelection === "Scissors") {
     rockWinSound.play();
   } else if 
-    (computer === "Paper" && user === "Rock" ||
-    user === "Paper" && computer === "Rock") {
+    (computerSelection === "Paper" && userSelection === "Rock" ||
+    userSelection === "Paper" && computerSelection === "Rock") {
     paperWinSound.play();
   } else if 
-    (computer === "Scissors" && user === "Paper" ||
-    user === "Scissors" && computer === "Paper") {
+    (computerSelection === "Scissors" && userSelection === "Paper" ||
+    userSelection === "Scissors" && computerSelection === "Paper") {
     scissorsWinSound.play();
   }
 }
