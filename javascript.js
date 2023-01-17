@@ -27,14 +27,8 @@ function gameRounds() {
     gameMessageText.textContent = "Choose how many rounds first!";  
   }
 }
-//Function to pull users choice for how many rounds to play
 
-function randomizeComputerChoice() {
-  let options = ["Rock", "Paper", "Scissors"];
-  return options[Math.floor(Math.random() * options.length)];
-}
-//Function to randomly select computers choice
-
+//Still trying to find a way to combine three choices into one function
 function chooseRock() {
   if (rounds == 3 || rounds == 5 || rounds == 7) {
     userSelection = document.getElementById("rock").value;
@@ -68,6 +62,11 @@ function chooseScissors() {
   getComputerImage();
 }
 
+function randomizeComputerChoice() {
+  let options = ["Rock", "Paper", "Scissors"];
+  return options[Math.floor(Math.random() * options.length)];
+}
+
 function getComputerImage() {
   computerSelection = randomizeComputerChoice();
   switch (computerSelection) {
@@ -85,7 +84,6 @@ function getComputerImage() {
 }
 
 function playRound() {
-  //Containers for game messages to receive based off each round outcome
   let gameMessageWin =  [
     "Good job! " + userSelection + " beats " + computerSelection + ".",
     "Way to go! " + userSelection + " beats " + computerSelection + ".",
@@ -96,8 +94,7 @@ function playRound() {
     "Shucks! " + computerSelection + " beats " + userSelection + ".",
     "Unlucky! " + computerSelection + " beats " + userSelection + ".",
   ];
-  
-  //Round of RPS with score increments and random game messages
+
   if (userSelection === computerSelection) {
     gameMessageText.textContent = "Tie! Choose again!";
   } else if (
@@ -117,8 +114,7 @@ function playRound() {
     usersScoreText.textContent = usersScore;
     gameMessageText.textContent = gameMessageLose[Math.floor(Math.random() * gameMessageWin.length)];
   }
-
-  //Results once predetermined score is reached. Game reset
+  
   if (usersScore === Math.ceil(rounds / 2)) {
     gameMessageText.textContent = "Congratulations! You won!";
     gameWinSound.play();
@@ -135,7 +131,6 @@ function playRound() {
     return;
   }
 
-  //Sound effect to play based on if user won or lost
   if 
     (computerSelection === "Rock" && userSelection === "Scissors" || 
     userSelection === "Rock" && computerSelection === "Scissors") {
