@@ -1,4 +1,4 @@
-let rounds;
+let rounds = "#";
 let computerSelection;
 let userSelection;
 let usersScore = 0;
@@ -17,8 +17,8 @@ let gameLoseSound = new Audio("sound-effects/game-loss.wav");
 function gameRounds() {
   computersScoreText.textContent = computersScore;
   usersScoreText.textContent = usersScore;
-  imgComputer.src = "";
-  imgUser.src = "";
+  imgUser.removeAttribute('src');
+  imgComputer.removeAttribute('src');
   rounds = document.getElementById("user-input").value;
   if (rounds == "#") {
     gameMessageText.textContent = "Choose how many rounds first!";
@@ -29,34 +29,34 @@ function gameRounds() {
 
 //Still trying to find a way to combine the three choices into one function
 function chooseRock() {
-  if (rounds == 3 || rounds == 5 || rounds == 7) {
-    userSelection = "Rock";
-    imgUser.src = "images/rock.jpg";
-  } else {
+  if (rounds === "#") {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
+  } else {
+    userSelection = "Rock";
+    imgUser.src = "images/rock.jpg";
   }
   randomizeComputerChoice();
 }
 
 function choosePaper() {
-  if (rounds == 3 || rounds == 5 || rounds == 7) {
-    userSelection = "Paper";
-    imgUser.src = "images/paper.jpg";
-  } else {
+  if (rounds === "#") {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
+  } else {
+    userSelection = "Paper";
+    imgUser.src = "images/paper.jpg";
   }
   randomizeComputerChoice();
 }
 
 function chooseScissors() {
-  if (rounds == 3 || rounds == 5 || rounds == 7) {
-    userSelection = "Scissors";
-    imgUser.src = "images/scissors.png";
-  } else {
+  if (rounds === "#") {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
+  } else {
+    userSelection = "Scissors";
+    imgUser.src = "images/scissors.png";
   } 
   randomizeComputerChoice();
 }
@@ -119,14 +119,14 @@ function playRound() {
     gameWinSound.play();
     usersScore = 0;
     computersScore = 0;
-    rounds = undefined;
+    rounds = "#";
     return;
   } else if (computersScore === Math.ceil(rounds / 2)) {
     gameMessageText.textContent = "You lost! Better luck next time!";
     gameLoseSound.play();
     usersScore = 0;
     computersScore = 0;
-    rounds = undefined;
+    rounds = "#";
     return;
   }
 
