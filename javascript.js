@@ -38,61 +38,74 @@ function randomizeComputerChoice() {
 function chooseRock() {
   if (rounds == 3 || rounds == 5 || rounds == 7) {
     userSelection = document.getElementById("rock").value;
-    computerSelection = randomizeComputerChoice();
-    if (computerSelection === "Rock") {
-      imgComputer.src = "images/rock.jpg";
-    } else if (computerSelection === "Paper") {
-      imgComputer.src = "images/paper.jpg";
-    } else {
-      imgComputer.src = "images/scissors.png";
-    }
     imgUser.src = "images/rock.jpg";
-    playRound()
+    computerSelection = randomizeComputerChoice();
+    switch (computerSelection) {
+      case "Rock": 
+        imgComputer.src = "images/rock.jpg";
+        break;
+      case "Paper": 
+        imgComputer.src = "images/paper.jpg";
+        break;
+      case "Scissors":
+        imgComputer.src = "images/scissors.png";
+        break;
+    }
   } else {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
   }
+  playRound();
 }
 
 function choosePaper() {
   if (rounds == 3 || rounds == 5 || rounds == 7) {
     userSelection = document.getElementById("paper").value;
-    computerSelection = randomizeComputerChoice();
-    if (computerSelection === "Rock") {
-      imgComputer.src = "images/rock.jpg";
-    } else if (computerSelection === "Paper") {
-      imgComputer.src = "images/paper.jpg";
-    } else {
-      imgComputer.src = "images/scissors.png";
-    }
     imgUser.src = "images/paper.jpg";
-    playRound();
+    computerSelection = randomizeComputerChoice();
+    switch (computerSelection) {
+      case "Rock": 
+        imgComputer.src = "images/rock.jpg";
+        break;
+      case "Paper": 
+        imgComputer.src = "images/paper.jpg";
+        break;
+      case "Scissors":
+        imgComputer.src = "images/scissors.png";
+        break;
+    }
   } else {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
   }
+  playRound();
 }
 
 function chooseScissors() {
   if (rounds == 3 || rounds == 5 || rounds == 7) {
     userSelection = document.getElementById("scissors").value;
-    computerSelection = randomizeComputerChoice();
-    if (computerSelection === "Rock") {
-      imgComputer.src = "images/rock.jpg";
-    } else if (computerSelection === "Paper") {
-      imgComputer.src = "images/paper.jpg";
-    } else {
-      imgComputer.src = "images/scissors.png";
-    }
     imgUser.src = "images/scissors.png";
-    playRound();
+    computerSelection = randomizeComputerChoice();
+      switch (computerSelection) {
+      case "Rock": 
+        imgComputer.src = "images/rock.jpg";
+        break;
+      case "Paper": 
+        imgComputer.src = "images/paper.jpg";
+        break;
+      case "Scissors":
+        imgComputer.src = "images/scissors.png";
+        break;
+    }
   } else {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
-  }
+  } 
+  playRound();
 }
 
 function playRound() {
+  //Containers for game messages to receive based off each round outcome
   let gameMessageWin =  [
     "Good job! " + userSelection + " beats " + computerSelection + ".",
     "Way to go! " + userSelection + " beats " + computerSelection + ".",
@@ -103,7 +116,8 @@ function playRound() {
     "Shucks! " + computerSelection + " beats " + userSelection + ".",
     "Unlucky! " + computerSelection + " beats " + userSelection + ".",
   ];
-
+  
+  //Round of RPS with score increments and random game messages
   if (userSelection === computerSelection) {
     gameMessageText.textContent = "Tie! Choose again!";
   } else if (
@@ -124,6 +138,7 @@ function playRound() {
     gameMessageText.textContent = gameMessageLose[Math.floor(Math.random() * gameMessageWin.length)];
   }
 
+  //Results once predetermined score is reached. Game reset
   if (usersScore === Math.ceil(rounds / 2)) {
     gameMessageText.textContent = "Congratulations! You won!";
     gameWinSound.play();
@@ -140,6 +155,7 @@ function playRound() {
     return;
   }
 
+  //Sound effect to play based on if user won or lost
   if 
     (computerSelection === "Rock" && userSelection === "Scissors" || 
     userSelection === "Rock" && computerSelection === "Scissors") {
