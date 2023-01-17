@@ -20,55 +20,54 @@ function gameRounds() {
   imgComputer.src = "";
   imgUser.src = "";
   rounds = document.getElementById("user-input").value;
-  if (rounds == 3 || rounds == 5 || rounds == 7) {
-  gameMessageText.textContent =
-    "Best of " + rounds + ". Good luck. Let's begin!";
+  if (rounds == "#") {
+    gameMessageText.textContent = "Choose how many rounds first!";
   } else {
-    gameMessageText.textContent = "Choose how many rounds first!";  
+    gameMessageText.textContent = "Best of " + rounds + ". Good luck. Let's begin!"; 
   }
 }
 
-//Still trying to find a way to combine three choices into one function
+//Still trying to find a way to combine the three choices into one function
 function chooseRock() {
   if (rounds == 3 || rounds == 5 || rounds == 7) {
-    userSelection = document.getElementById("rock").value;
+    userSelection = "Rock";
     imgUser.src = "images/rock.jpg";
   } else {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
   }
-  getComputerImage();
+  randomizeComputerChoice();
 }
 
 function choosePaper() {
   if (rounds == 3 || rounds == 5 || rounds == 7) {
-    userSelection = document.getElementById("paper").value;
+    userSelection = "Paper";
     imgUser.src = "images/paper.jpg";
   } else {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
   }
-  getComputerImage();
+  randomizeComputerChoice();
 }
 
 function chooseScissors() {
   if (rounds == 3 || rounds == 5 || rounds == 7) {
-    userSelection = document.getElementById("scissors").value;
+    userSelection = "Scissors";
     imgUser.src = "images/scissors.png";
   } else {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
   } 
-  getComputerImage();
+  randomizeComputerChoice();
 }
 
 function randomizeComputerChoice() {
   let options = ["Rock", "Paper", "Scissors"];
-  return options[Math.floor(Math.random() * options.length)];
+  computerSelection = options[Math.floor(Math.random() * options.length)];
+  getComputerImage();
 }
 
 function getComputerImage() {
-  computerSelection = randomizeComputerChoice();
   switch (computerSelection) {
     case "Rock": 
       imgComputer.src = "images/rock.jpg";
