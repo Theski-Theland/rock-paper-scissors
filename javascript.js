@@ -39,68 +39,48 @@ function chooseRock() {
   if (rounds == 3 || rounds == 5 || rounds == 7) {
     userSelection = document.getElementById("rock").value;
     imgUser.src = "images/rock.jpg";
-    computerSelection = randomizeComputerChoice();
-    switch (computerSelection) {
-      case "Rock": 
-        imgComputer.src = "images/rock.jpg";
-        break;
-      case "Paper": 
-        imgComputer.src = "images/paper.jpg";
-        break;
-      case "Scissors":
-        imgComputer.src = "images/scissors.png";
-        break;
-    }
   } else {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
   }
-  playRound();
+  getComputerImage();
 }
 
 function choosePaper() {
   if (rounds == 3 || rounds == 5 || rounds == 7) {
     userSelection = document.getElementById("paper").value;
     imgUser.src = "images/paper.jpg";
-    computerSelection = randomizeComputerChoice();
-    switch (computerSelection) {
-      case "Rock": 
-        imgComputer.src = "images/rock.jpg";
-        break;
-      case "Paper": 
-        imgComputer.src = "images/paper.jpg";
-        break;
-      case "Scissors":
-        imgComputer.src = "images/scissors.png";
-        break;
-    }
   } else {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
   }
-  playRound();
+  getComputerImage();
 }
 
 function chooseScissors() {
   if (rounds == 3 || rounds == 5 || rounds == 7) {
     userSelection = document.getElementById("scissors").value;
     imgUser.src = "images/scissors.png";
-    computerSelection = randomizeComputerChoice();
-      switch (computerSelection) {
-      case "Rock": 
-        imgComputer.src = "images/rock.jpg";
-        break;
-      case "Paper": 
-        imgComputer.src = "images/paper.jpg";
-        break;
-      case "Scissors":
-        imgComputer.src = "images/scissors.png";
-        break;
-    }
   } else {
     gameMessageText.textContent = "Choose how many rounds first!";
     return;
   } 
+  getComputerImage();
+}
+
+function getComputerImage() {
+  computerSelection = randomizeComputerChoice();
+  switch (computerSelection) {
+    case "Rock": 
+      imgComputer.src = "images/rock.jpg";
+      break;
+    case "Paper": 
+      imgComputer.src = "images/paper.jpg";
+      break;
+    case "Scissors":
+      imgComputer.src = "images/scissors.png";
+      break;
+  }
   playRound();
 }
 
