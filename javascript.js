@@ -102,7 +102,6 @@ function playRound() {
     (userSelection === "Scissors" && computerSelection === "Paper")
   ) {
     usersScoreText.textContent = ++usersScore;
-    computersScoreText.textContent = computersScore;
     gameMessageText.textContent = gameMessageWin[Math.floor(Math.random() * gameMessageWin.length)];
   } else if (
     (computerSelection === "Rock" && userSelection === "Scissors") ||
@@ -110,7 +109,6 @@ function playRound() {
     (computerSelection === "Scissors" && userSelection === "Paper")
   ) {
     computersScoreText.textContent = ++computersScore;
-    usersScoreText.textContent = usersScore;
     gameMessageText.textContent = gameMessageLose[Math.floor(Math.random() * gameMessageWin.length)];
   }
   
