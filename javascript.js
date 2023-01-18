@@ -27,6 +27,11 @@ function gameRounds() {
   }
 }
 
+
+function randomizeComputerSelection() {
+  let options = ["Rock", "Paper", "Scissors"];
+  return options[Math.floor(Math.random() * options.length)];
+}
 //Still trying to find a way to combine the three choices into one function
 function chooseRock() {
   if (rounds === "#") {
@@ -36,7 +41,7 @@ function chooseRock() {
     userSelection = "Rock";
     imgUser.src = "images/rock.jpg";
   }
-  randomizeComputerChoice();
+  getComputerSelection();
 }
 
 function choosePaper() {
@@ -47,7 +52,7 @@ function choosePaper() {
     userSelection = "Paper";
     imgUser.src = "images/paper.jpg";
   }
-  randomizeComputerChoice();
+  getComputerSelection();
 }
 
 function chooseScissors() {
@@ -58,16 +63,11 @@ function chooseScissors() {
     userSelection = "Scissors";
     imgUser.src = "images/scissors.png";
   } 
-  randomizeComputerChoice();
+  getComputerSelection();
 }
 
-function randomizeComputerChoice() {
-  let options = ["Rock", "Paper", "Scissors"];
-  computerSelection = options[Math.floor(Math.random() * options.length)];
-  getComputerImage();
-}
-
-function getComputerImage() {
+function getComputerSelection() {
+  computerSelection = randomizeComputerSelection();
   switch (computerSelection) {
     case "Rock": 
       imgComputer.src = "images/rock.jpg";
