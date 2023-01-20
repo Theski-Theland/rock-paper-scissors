@@ -23,7 +23,7 @@ function gameRounds() {
   if (rounds == "#") {
     gameMessageText.textContent = "Choose how many rounds first!";
   } else {
-    gameMessageText.textContent = "Best of " + rounds + ". Good luck. Let's begin!"; 
+    gameMessageText.textContent = `Best of ${rounds}. Good luck. Let's begin!`;
   }
 }
 
@@ -84,14 +84,14 @@ function getComputerSelection() {
 
 function playRound() {
   let gameMessageWin =  [
-    "Good job! " + userSelection + " beats " + computerSelection + ".",
-    "Way to go! " + userSelection + " beats " + computerSelection + ".",
-    "Well done! " + userSelection + " beats " + computerSelection + ".",
+    `Good job! ${userSelection} beats ${computerSelection}.`,
+    `Way to go! ${userSelection} beats ${computerSelection}.`,
+    `Well done! ${userSelection} beats ${computerSelection}.`,
   ];
   let gameMessageLose = [
-    "Oh no! " + computerSelection + " beats " + userSelection + ".",
-    "Shucks! " + computerSelection + " beats " + userSelection + ".",
-    "Unlucky! " + computerSelection + " beats " + userSelection + ".",
+    `Oh no! ${computerSelection} beats ${userSelection}.`,
+    `Unlucky! ${computerSelection} beats ${userSelection}.`,
+    `Shucks! ${computerSelection} beats ${userSelection}.`,
   ];
 
   if (userSelection === computerSelection) {
