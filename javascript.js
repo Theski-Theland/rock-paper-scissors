@@ -17,8 +17,8 @@ let gameLoseSound = new Audio("sound-effects/game-loss.wav");
 function gameRounds() {
   computersScoreText.textContent = computersScore;
   usersScoreText.textContent = usersScore;
-  imgUser.removeAttribute('src');
-  imgComputer.removeAttribute('src');
+  imgUser.removeAttribute("src");
+  imgComputer.removeAttribute("src");
   rounds = document.getElementById("user-input").value;
   if (rounds == "#") {
     gameMessageText.textContent = "Choose how many rounds first!";
@@ -26,7 +26,6 @@ function gameRounds() {
     gameMessageText.textContent = `Best of ${rounds}. Good luck. Let's begin!`;
   }
 }
-
 
 function randomizeComputerSelection() {
   let options = ["Rock", "Paper", "Scissors"];
@@ -62,17 +61,17 @@ function chooseScissors() {
   } else {
     userSelection = "Scissors";
     imgUser.src = "images/scissors.png";
-  } 
+  }
   getComputerSelection();
 }
 
 function getComputerSelection() {
   computerSelection = randomizeComputerSelection();
   switch (computerSelection) {
-    case "Rock": 
+    case "Rock":
       imgComputer.src = "images/rock.jpg";
       break;
-    case "Paper": 
+    case "Paper":
       imgComputer.src = "images/paper.jpg";
       break;
     case "Scissors":
@@ -83,7 +82,7 @@ function getComputerSelection() {
 }
 
 function playRound() {
-  let gameMessageWin =  [
+  let gameMessageWin = [
     `Good job! ${userSelection} beats ${computerSelection}.`,
     `Way to go! ${userSelection} beats ${computerSelection}.`,
     `Well done! ${userSelection} beats ${computerSelection}.`,
@@ -102,16 +101,18 @@ function playRound() {
     (userSelection === "Scissors" && computerSelection === "Paper")
   ) {
     usersScoreText.textContent = ++usersScore;
-    gameMessageText.textContent = gameMessageWin[Math.floor(Math.random() * gameMessageWin.length)];
+    gameMessageText.textContent =
+      gameMessageWin[Math.floor(Math.random() * gameMessageWin.length)];
   } else if (
     (computerSelection === "Rock" && userSelection === "Scissors") ||
     (computerSelection === "Paper" && userSelection === "Rock") ||
     (computerSelection === "Scissors" && userSelection === "Paper")
   ) {
     computersScoreText.textContent = ++computersScore;
-    gameMessageText.textContent = gameMessageLose[Math.floor(Math.random() * gameMessageWin.length)];
+    gameMessageText.textContent =
+      gameMessageLose[Math.floor(Math.random() * gameMessageWin.length)];
   }
-  
+
   if (usersScore === Math.ceil(rounds / 2)) {
     gameMessageText.textContent = "Congratulations! You won!";
     gameWinSound.play();
@@ -128,17 +129,20 @@ function playRound() {
     return;
   }
 
-  if 
-    (computerSelection === "Rock" && userSelection === "Scissors" || 
-    userSelection === "Rock" && computerSelection === "Scissors") {
+  if (
+    (computerSelection === "Rock" && userSelection === "Scissors") ||
+    (userSelection === "Rock" && computerSelection === "Scissors")
+  ) {
     rockWinSound.play();
-  } else if 
-    (computerSelection === "Paper" && userSelection === "Rock" ||
-    userSelection === "Paper" && computerSelection === "Rock") {
+  } else if (
+    (computerSelection === "Paper" && userSelection === "Rock") ||
+    (userSelection === "Paper" && computerSelection === "Rock")
+  ) {
     paperWinSound.play();
-  } else if 
-    (computerSelection === "Scissors" && userSelection === "Paper" ||
-    userSelection === "Scissors" && computerSelection === "Paper") {
+  } else if (
+    (computerSelection === "Scissors" && userSelection === "Paper") ||
+    (userSelection === "Scissors" && computerSelection === "Paper")
+  ) {
     scissorsWinSound.play();
   }
 }

@@ -1,53 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rock, Paper, Scissors, Shoot!</title>
-        <script src="javascript.js" defer></script>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="container">
-            <h1 class="title">Rock Paper Scissors!</h1>
-        </div>
-        
-        <div class="scoreboard">
-            <div class="score player">
-                <div class="score-text">Player Score</div>
-                <div id="player-score" class="score-number">0</div>
-            </div>
-            <div class="score computer">
-                <div class="score-text">Computer Score</div>
-                <div id="computer-score" class="score-number">0</div>
-            </div>
-        </div>
-        
-        <div class="container-message">
-            <div id = "game-message" class="game-messages">How many rounds?</div>
-            <form>
-                <select required id="user-input" class="answer">
-                        <option>#</option>
-                        <option>3</option>
-                        <option>5</option>
-                        <option>7</option>
-                </select>
-                <input class="submit btn" type="button" onclick="gameRounds()" value="Let's Play!"/>
-            </form> 
-        </div>
-        <div class="play-round">
-            <img id="img-player" class ="selection player" width="150px" height="150px">
-            <div class="vs">versus</div>
-            <img id="img-computer" class ="selection computer" width="150px" height="150px">
-        </div>
-        
-        <div class="container">
-            <div class="choose-message">The choice is yours!</div>
-        </div>
-        <div class="options">
-            <button type="button" id="rock" class="rock btn" onclick="chooseRock()"><img src="images/rock.jpg" alt ="A sturdy rock" width="150px" height="150px"></button>
-            <button type="button" id="paper" class="paper btn" onclick="choosePaper()"><img src="images/paper.jpg" alt ="A piece of paper" width="150px" height="150px"></button>
-            <button type="button" id="scissors" class="scissors btn" onclick="chooseScissors()"><img src="images/scissors.png" alt ="Sharp scissors" width="150px" height="150px"></button>
-        </div>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper, Scissors, Shoot!</title>
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Rock Paper Scissors!</h1>
+    </div>
+
+    <div class="scoreboard">
+      <div class="score player">
+        <div class="score-text">Player Score</div>
+        <div id="player-score" class="score-number">0</div>
+      </div>
+      <div class="score computer">
+        <div class="score-text">Computer Score</div>
+        <div id="computer-score" class="score-number">0</div>
+      </div>
+    </div>
+
+    <div class="container-message">
+      <div id="game-message" class="game-messages">How many rounds?</div>
+      <form>
+        <select required id="user-input" class="answer">
+          <option>#</option>
+          <option>3</option>
+          <option>5</option>
+          <option>7</option>
+        </select>
+        <input
+          class="submit btn"
+          type="button"
+          onclick="gameRounds()"
+          value="Let's Play!"
+        />
+      </form>
+    </div>
+    <div class="play-round">
+      <img
+        id="img-player"
+        class="selection player"
+        width="150px"
+        height="150px"
+      />
+      <div class="vs">versus</div>
+      <img
+        id="img-computer"
+        class="selection computer"
+        width="150px"
+        height="150px"
+      />
+    </div>
+
+    <div class="container">
+      <div class="choose-message">The choice is yours!</div>
+    </div>
+    <div class="options">
+      <button type="button" id="rock" class="rock btn" onclick="chooseRock()">
+        <img
+          src="images/rock.jpg"
+          alt="A sturdy rock"
+          width="150px"
+          height="150px"
+        />
+      </button>
+      <button
+        type="button"
+        id="paper"
+        class="paper btn"
+        onclick="choosePaper()"
+      >
+        <img
+          src="images/paper.jpg"
+          alt="A piece of paper"
+          width="150px"
+          height="150px"
+        />
+      </button>
+      <button
+        type="button"
+        id="scissors"
+        class="scissors btn"
+        onclick="chooseScissors()"
+      >
+        <img
+          src="images/scissors.png"
+          alt="Sharp scissors"
+          width="150px"
+          height="150px"
+        />
+      </button>
+    </div>
+  </body>
 </html>

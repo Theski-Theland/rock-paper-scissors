@@ -1,158 +1,158 @@
 body {
-    background: url("images/background.jpg") no-repeat center center/ cover;
-    height: 100vh;
-    color: darkgreen;
+  background: url("images/background.jpg") no-repeat center center/ cover;
+  height: 100vh;
+  color: darkgreen;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .container-message {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .answer {
-    height: 50px;
-    width: 50px;
-    background-color: bisque;
-    border: 0;
+  height: 50px;
+  width: 50px;
+  background-color: bisque;
+  border: 0;
 }
 
 form {
-    display: flex;
+  display: flex;
 }
 
 .submit {
-    height: 50px;
-    width: 50px;
-    background-color: bisque;
-    white-space: initial;
-    border: 0;
-    margin-left: 2px;
+  height: 50px;
+  width: 50px;
+  background-color: bisque;
+  white-space: initial;
+  border: 0;
+  margin-left: 2px;
 }
 
 .title {
-    text-align: center;
-    font-size: 60px;
-    font-weight: bold;
-    margin: 20px;
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: bisque;
-    width: 600px;
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: bisque;
+  width: 600px;
 }
 
 .scoreboard {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .score-number {
-    text-align: center;
+  text-align: center;
 }
 
 .score {
-    text-align: center;
-    width: 250px;
-    height: 100px;
-    font-size: 36px;
-    border: 2px solid black;
-    border-radius:  20px;
-    background-color: bisque;
-    padding-top: 20px;
+  text-align: center;
+  width: 250px;
+  height: 100px;
+  font-size: 36px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: bisque;
+  padding-top: 20px;
 }
 
 .game-messages {
-    text-align: center;
-    font-size: 48px;
-    margin: 40px;
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: bisque;
-    padding: 20px;
+  text-align: center;
+  font-size: 48px;
+  margin: 40px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: bisque;
+  padding: 20px;
 }
 
 .play-round {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .selection {
-    width: 175px;
-    height: 175px;
-    border: 5px solid black;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: bisque;
-    vertical-align: middle;
+  width: 175px;
+  height: 175px;
+  border: 5px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: bisque;
+  vertical-align: middle;
 }
 
 option,
 select,
 input {
-    font-size: 16px;
-    color: darkgreen;
-    text-align: center;
+  font-size: 16px;
+  color: darkgreen;
+  text-align: center;
 }
 
 .vs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 72px;
-    font-weight: bold;
-    text-transform: uppercase;
-    background-color: bisque;
-    border: 5px solid black;
-    border-radius: 20px;
-    height: 100px;
-    padding: 2px 20px;
-    margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 72px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: bisque;
+  border: 5px solid black;
+  border-radius: 20px;
+  height: 100px;
+  padding: 2px 20px;
+  margin-top: 40px;
 }
 
 .selection.player {
-    margin-left: 250px;
+  margin-left: 250px;
 }
 
 .selection.computer {
-    margin-right: 250px;
+  margin-right: 250px;
 }
 
 .choose-message {
-    text-align: center;
-    font-size: 36px;
-    margin: 20px;
-    border: 2px solid black;
-    border-radius: 10px;
-    background-color: bisque;
-    padding: 20px;
+  text-align: center;
+  font-size: 36px;
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: bisque;
+  padding: 20px;
 }
 
 .options {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .options > .btn {
-    border: 5px solid black;
-    border-radius: 20px;
-    padding: 10px;
-    background-color: bisque;
+  border: 5px solid black;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: bisque;
 }
 
 .image-text {
-    text-align: center;
+  text-align: center;
 }
 
 .btn:hover {
-    background-color: brown;
-    cursor: pointer;
+  background-color: brown;
+  cursor: pointer;
 }
 
 .paper.btn {
-    margin: auto 40px;
+  margin: auto 40px;
 }
